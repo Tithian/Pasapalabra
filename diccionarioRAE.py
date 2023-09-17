@@ -142,7 +142,7 @@ def saveDict(file, d):
     try:
         js = json.dumps(d, indent=4)
 
-        with open(file, "w") as f1:
+        with open(f"json/{file}", "w") as f1:
             f1.write(js)
             print("Diccionario guardado.")
     except:
