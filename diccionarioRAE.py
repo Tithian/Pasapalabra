@@ -10,48 +10,6 @@ browser = mechanicalsoup.StatefulBrowser(
         user_agent='MyBot/0.1: mysite.example.com/bot_info',
     )
 
-#
-# print(f"Total palabras: {numPalabras}")
-# print(f"Total letras: {numLetras}")
-# #print(dic)
-# #pp.pprint(dic)
-# pp.pprint(frecuencias)
-# for letra,frec in frecuencias.items():
-#     frecuenciasrelativas[letra]=frec/numLetras*100
-# # pp.pprint(frecuenciasrelativas)
-# print("---------Frecuencias Relativas---------".center(80))
-# for k,v in sorted(
-#   frecuenciasrelativas.items(),key=lambda item:item[1],reverse=True # todo: EL LAMBDA ESTE NO LO ENTIENDO
-# ):
-#     print("%2s: %5.2f" % (k,v))
-
-
-# def parse_definiciones(d):
-#     url = "https://dle.rae.es/"
-#     defdic = {}
-#     for k in d.keys():
-#         definiciones = []
-#         enlace = url + k
-#         browser.open(enlace)
-#         paragraphs = browser.page.find_all("p", class_="j")
-#         pass_this = browser.page.find_all("abbr", class_="g")
-#         pass_this.extend(browser.page.find_all("abbr", title="nombre masculino"))
-#         pass_this.extend(browser.page.find_all("abbr", title="nombre femenino"))
-#         pass_this.extend(browser.page.find_all("abbr", title="nombre masculino y femenino"))
-#         pass_this.extend(browser.page.find_all("abbr", class_="c"))
-#         pass_this.extend(browser.page.find_all("span", class_="n_acep"))
-#         for paragraph in paragraphs:
-#             texto = ""
-#             for elemento in paragraph:
-#                 if elemento in pass_this:
-#                     pass
-#                 else:
-#                     texto += elemento.text
-#             definiciones.append(texto.replace("  ", "").replace("‖ ", "").strip())
-#         defdic[k] = definiciones
-#         print("Se ha añadido la palabra", k)
-#     saveDict("definiciones.json", defdic)
-
 def parse_palabra(palabra):
     url = "https://dle.rae.es/"
     definiciones = []
