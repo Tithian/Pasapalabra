@@ -131,7 +131,7 @@ def magicRAE():
 def loadDict(file):
     global dicc
     try:
-        with open(file) as f1:
+        with open(f"json/{file}") as f1:
             data = json.load(f1)
         dicc = data
     except:
@@ -255,8 +255,6 @@ def menu():
         cincoVocalesJson(dicc)
     elif chk == "5":
         cincoJson(dicc)
-    elif chk == "6":
-        seisJson(dicc)
     elif chk == "pasapalabra":
         try:
             pasapalabra(dicc)
